@@ -39,3 +39,9 @@ python new_app.py
 using 0 and 1 as reference
 
 Access the application in your web browser at `http://127.0.0.1:5000/`.
+
+
+![First page](https://github.com/IuliaVrabie/Elementary-Cellular-Automaton/blob/6d4bfcfa1df649787e6723b31fab8cf56e76a5e8/1.png)
+
+![Second page](https://github.com/IuliaVrabie/Elementary-Cellular-Automaton/blob/6d4bfcfa1df649787e6723b31fab8cf56e76a5e8/2.png)
+
