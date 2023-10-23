@@ -16,14 +16,14 @@
             <div class="data">
                 <label for="rules">List of Rules:</label>
                 <div id="rules" class="rules-list">
-                    <p class="{% if listOfRules[7] == '@' %}black{% else %}white{% endif %}">000</p>
-                    <p class="{% if listOfRules[6] == '@' %}black{% else %}white{% endif %}">001</p>
-                    <p class="{% if listOfRules[5] == '@' %}black{% else %}white{% endif %}">010</p>
-                    <p class="{% if listOfRules[4] == '@' %}black{% else %}white{% endif %}">011</p>
-                    <p class="{% if listOfRules[3] == '@' %}black{% else %}white{% endif %}">100</p>
-                    <p class="{% if listOfRules[2] == '@' %}black{% else %}white{% endif %}">101</p>
-                    <p class="{% if listOfRules[1] == '@' %}black{% else %}white{% endif %}">110</p>
-                    <p class="{% if listOfRules[0] == '@' %}black{% else %}white{% endif %}">111</p>
+                    <p class="{% if listOfRules[7] == 1 %}black{% else %}white{% endif %}">000</p>
+                    <p class="{% if listOfRules[6] == 1 %}black{% else %}white{% endif %}">001</p>
+                    <p class="{% if listOfRules[5] == 1 %}black{% else %}white{% endif %}">010</p>
+                    <p class="{% if listOfRules[4] == 1 %}black{% else %}white{% endif %}">011</p>
+                    <p class="{% if listOfRules[3] == 1 %}black{% else %}white{% endif %}">100</p>
+                    <p class="{% if listOfRules[2] == 1 %}black{% else %}white{% endif %}">101</p>
+                    <p class="{% if listOfRules[1] == 1 %}black{% else %}white{% endif %}">110</p>
+                    <p class="{% if listOfRules[0] == 1 %}black{% else %}white{% endif %}">111</p>
                 </div>
             </div>
 
@@ -35,14 +35,14 @@
 
             <div class="data">
                 <label for="nr_gen">Nr of Generations:</label>
-                <p id="nr_gen">{{ nr_gen }}</p>
+                <p id="nr_gen">{{ indexOfCurrGeneration }}</p>
             </div>
         </div>
         <table>
             {% for row in result %}
                 <tr>
                     {% for cell in row %}
-                        <td class="{% if cell == ' ' %}white{% else %}black{% endif %}"></td>
+                        <td class="{% if cell == '0' %}white{% else %}black{% endif %}"></td>
                     {% endfor %}
                 </tr>
             {% endfor %}

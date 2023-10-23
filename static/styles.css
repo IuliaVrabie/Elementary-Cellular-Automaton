@@ -1,22 +1,105 @@
 body {
-    text-align: center;
+    font-family: Arial, sans-serif;
+    text-align: -webkit-center;
+    background-color: #f4f4f4;
+    transition: background-color 0.5s;
 }
 
-#automaton-container {
-    display: grid;
-    grid-template-columns: repeat(50, 20px);
-    grid-template-rows: repeat(50, 20px);
-    gap: 1px;
-    margin: 20px auto;
+h1 {
+    color: #7F8084;
+    font-size: 52px;
+    padding: 23px;
+    transition: color 0.5s;
+    margin: 0;
 }
 
-.square {
+.result-container {
+    width: 90%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 35px;
+    box-shadow: 0px 0px 30px rgba(13, 54, 84, 0.3);
+    transition: background-color 0.5s, transform 0.5s;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.rules-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.rules-list p {
+    padding: 1px 6px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #F17B30;
+    border-radius: 6px;
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+}
+
+p {
+    font-size: 20px;
+    color: #000;
+    margin: 10px 0;
+    background-color: #fff;
+    padding: 1px 10px;
+    border-radius: 6px;
+}
+
+pre {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    white-space: pre-wrap;
+    color: #00B9FF;
+}
+
+.white {
+    background-color: #fff;
+    color: #0D3654;
+}
+
+.black {
+    background-color: #0D3654;
+    color: white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0; /* Remove gap between cells */
+    margin-top: 30px;
+}
+
+tr {
     width: 20px;
-    height: 20px;
-    background: white;
-    border: 1px solid #000;
+    height: 15px;
 }
 
-.square.active {
-    background: black;
+td {
+    border: 1px solid #2E5986;
 }
+

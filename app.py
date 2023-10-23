@@ -38,6 +38,7 @@ def run_code():
         linie = ""
         for i in v:
             linie = linie + i
+        print(linie)
         return linie
 
     if steps % 2 == 0:
