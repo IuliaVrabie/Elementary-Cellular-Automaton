@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cellular Automaton Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: -webkit-center;
+            background-color: #f4f4f4;
+            transition: background-color 0.5s;
+        }
+
+        h1 {
+            color: #7F8084;
+            font-size: 52px;
+            padding: 23px;
+            transition: color 0.5s;
+            margin: 0;
+        }
+
+        .result-container {
+            width: 90%;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 35px;
+            box-shadow: 0px 0px 30px rgba(13, 54, 84, 0.3);
+            transition: background-color 0.5s, transform 0.5s;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .rules-list {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .rules-list p {
+            padding: 1px 6px;
+            margin-left: 5px;
+            margin-right: 5px;
+            border-radius: 5px;
+        }
+
+        .data {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            background-color: #F17B30;
+            border-radius: 6px;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        p {
+            font-size: 20px;
+            color: #000;
+            margin: 10px 0;
+            background-color: #fff;
+            padding: 1px 10px;
+            border-radius: 6px;
+        }
+
+        pre {
+            background-color: #ffffff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            font-size: 18px;
+            white-space: pre-wrap;
+            color: #00B9FF;
+        }
+
+        .white {
+            background-color: #fff;
+            color: #0D3654;
+        }
+
+        .black {
+            background-color: #0D3654;
+            color: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0; /* Remove gap between cells */
+            margin-top: 30px;
+        }
+
+        tr {
+            width: 20px;
+            height: 15px;
+        }
+
+        td {
+            border: 1px solid #2E5986;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Elementary Cellular Automaton Result</h1>
+    <div class="result-container">
+        <div class="info">
+            <div class="data">
+                <label for="rule">Rule:</label>
+                <p>{{ rule }}</p>
+            </div>
+
+            <div class="data">
+                <label for="rules">List of Rules:</label>
+                <div class="rules-list">
+                    <p class="{% if listOfRules[7] == '@' %}black{% else %}white{% endif %}">000</p>
+                    <p class="{% if listOfRules[6] == '@' %}black{% else %}white{% endif %}">001</p>
+                    <p class="{% if listOfRules[5] == '@' %}black{% else %}white{% endif %}">010</p>
+                    <p class="{% if listOfRules[4] == '@' %}black{% else %}white{% endif %}">011</p>
+                    <p class="{% if listOfRules[3] == '@' %}black{% else %}white{% endif %}">100</p>
+                    <p class="{% if listOfRules[2] == '@' %}black{% else %}white{% endif %}">101</p>
+                    <p class="{% if listOfRules[1] == '@' %}black{% else %}white{% endif %}">110</p>
+                    <p class="{% if listOfRules[0] == '@' %}black{% else %}white{% endif %}">111</p>
+                </div>
+            </div>
+
+
+            <div class="data">
+                <label for="steps">Nr of Steps:</label>
+                <p>{{ steps }}</p>
+            </div>
+
+            <div class="data">
+                <label for="nr_gen">Nr of Generations:</label>
+                <p>{{ nr_gen }}</p>
+            </div>
+        </div>
+        <table>
+            {% for row in result %}
+                <tr>
+                    {% for cell in row %}
+                        <td class="{% if cell == ' ' %}white{% else %}black{% endif %}"></td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

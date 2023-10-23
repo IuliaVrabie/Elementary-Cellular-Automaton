@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cellular Automaton</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: -webkit-center;
+            background-color: #f4f4f4;
+            transition: background-color 0.5s;
+        }
+
+        h1 {
+            color: #7F8084;
+            font-size: 52px;
+            padding: 20px;
+            transition: color 0.5s;
+        }
+
+        form {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #0D3654;
+            border-radius: 10px;
+            padding: 35px;
+            box-shadow: 0px 0px 30px rgba(13, 54, 84, 0.3);
+            transition: background-color 0.5s, transform 0.5s;
+        }
+
+        label {
+            font-size: 18px;
+            color: #fff;
+        }
+
+        input[type="number"] {
+            width: 60%;
+            padding: 10px;
+            margin: 10px 10px 20px 10px;
+            border: 1px solid #2E5986;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #F17B30;
+            color: #fff;
+            font-size: 20px;
+            padding: 10px 41px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.5s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #b84c07;
+        }
+
+        {% if generatie %}
+        p {
+            font-size: 24px;
+            color: #00B9FF;
+            margin-top: 20px;
+        }
+
+        pre {
+            background-color: #ffffff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            font-size: 18px;
+            white-space: pre-wrap;
+            color: #00B9FF;
+        }
+        {% endif %}
+    </style>
+</head>
+<body>
+    <h1>Elementary Cellular Automaton</h1>
+    <form action="/run_code" method="post">
+        <label for="rule">Enter a rule (0-255):</label>
+        <input type="number" name="rule" value="181">
+<!--        <input type="number" name="rule" max="255" min="0" value="181">-->
+        <label for="steps">Number of Steps:</label>
+        <input type="number" name="steps" value="100">
+        <label for="nr_gen">Number of Generations:</label>
+        <input type="number" name="nr_gen" value="200">
+        <input type="submit" value="Run">
+    </form>
+
+    {% if generatie %}
+    <p>Generation:</p>
+    <pre>
+        {% for cell in generatie %}
+            {{ cell }}
+        {% endfor %}
+    </pre>
+    {% endif %}
+</body>
+</html>
