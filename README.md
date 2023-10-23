@@ -19,11 +19,10 @@ It seems like you want to create a basic Python application using Flask to imple
 Create a directory for your project and create the following files:
 
 - `app.py`: Your Flask application
-- `results.html`: HTML template for displaying the results
+- `templates/results.html`: HTML template for displaying the results
 - `new_app.py`: The updated version of your Flask application using 0s and 1s
-- `new_result.html`: HTML template for the updated results
-- `styles.css`: Styles for results.html/ new_result.html
-- `README.md`: A readme file to document your project
+- `templates/new_result.html`: HTML template for the updated results
+- `static/styles.css`: Styles for results.html/ new_result.html
 
 **Step 3: Run Your Flask Application**
 
@@ -32,7 +31,7 @@ Open a terminal in your project directory and run your Flask application:
 ```bash
 python app.py 
 ```
-using space and @ as reference
+using ' ' and @ as reference
 
 ```bash
 python new_app.py 
